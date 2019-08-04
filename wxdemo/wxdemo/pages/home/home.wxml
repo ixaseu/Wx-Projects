@@ -1,0 +1,31 @@
+<!--pages/home/home.wxml-->
+<import src='../tpl/products/products.wxml'/>
+<view class="home" wx:if="{{themes.length>0}}">
+<view class="home-banner">
+<swiper class="home-banner-swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{banners}}" wx:key="{{index}}">
+    <swiper-item class="home-banner-item">
+      <image src="{{baseUrl}}{{item.imagePath}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view class="theme">
+  <h4 class="theme-title">精选主题</h4>
+  <view class="theme-content">
+    <block wx:for="{{themes}}">
+      <view class="{{item.size==2?'big':'small'}}"
+      bindtap="goTheme" data-themeid="{{item._id}}"
+      data-title="{{item.name}}">
+        <image src="{{baseUrl}}{{item.imgPath}}"></image>
+      </view>
+    </block>
+  </view>
+</view>
+<view>
+  <h4 class="theme-title">产品列表</h4>
+  <template is="products" data="{{ ...{products,baseUrl} }}"></template>
+</view>
+</view>
+<loading wx:else>数据加载ing</loading>

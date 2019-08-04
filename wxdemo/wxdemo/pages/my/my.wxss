@@ -1,0 +1,23 @@
+/* pages/my/my.wxss */
+.useInfo{
+  display: flex;
+  align-items: center;
+  width:750rpx;
+  height:40rpx;
+  background: #ab956d;
+  padding:80rpx
+}
+.userHead{
+  width:100rpx;
+  height:100rpx;
+  border-radius: 100rpx;
+  background: #ccc;
+}
+.name{
+  margin-left:30rpx;
+  width:270rpx;
+  height:80rpx;
+  color:#fff;
+  line-height: 80rpx;
+  background:#ab956d
+}

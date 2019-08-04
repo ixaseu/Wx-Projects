@@ -1,0 +1,30 @@
+<!--pages/categroy/categroy.wxml-->
+<view class="categroy">
+  <view class="left">
+    <block wx:for="{{nav}}">
+      <view class="left-item {{index==navSel?'sel':''}}" bindtap="sel" data-index="{{index}}">
+      {{item}}
+      </view>
+    </block>
+  </view>
+  <view class="right">
+    <view class="right-container {{'move'+navSel}}">
+    <block wx:for="{{typeInfo}}">
+        <view>
+          <view class="img-content">
+            <image src="{{baseUrl}}{{item.imgPath}}"></image>
+            <view class="products-tpl">
+              <block wx:for="{{item.info}}">
+                <view class="products-item" bindtap="goDetail">
+                  <image src="{{baseUrl}}{{item.imgPath}}"></image>
+                  <text>{{item.name}}</text>
+                  <text>￥{{item.price}}</text>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    </view>
+</view>

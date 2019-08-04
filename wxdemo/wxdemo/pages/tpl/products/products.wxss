@@ -1,0 +1,21 @@
+/* pages/tpl/products/products.wxss */
+.products-tpl{
+  color:#000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around
+}
+.products-item{
+  width:360rpx;
+  height:360rpx;
+  background: #eee;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
+.products-item image{
+  width:50%;
+  height:50%
+}

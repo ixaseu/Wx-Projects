@@ -1,0 +1,72 @@
+<!--pages/car/car.wxml-->
+<view class="container cart-container">
+    <!-- 购物车不为空 -->
+    <block wx:if="{{carData.length>0}}">
+        <view class="cart-box">
+        <!--  循环购物车列表 -->
+            <block wx:for="{{carData}}">
+                <view class="cart-item ">
+                    <view class="cart-item-main">
+                    <!-- 选中按钮 -->
+                        <view   class="cart-item-checkbox" bindtap='select' data-index='{{index}}'>
+                            <image wx:if="{{item.sel}}" src="/common/icon/circle@selected.png"></image>
+                            <image wx:else src="/common/icon/circle@noselected.png"></image>
+                        </view>
+                        <!-- 商品图片 -->
+                        <view class="cart-item-img" >
+                            <image class="good-image" src="{{baseUrl}}{{item.imgPath}}"></image>
+                        </view>
+                        <!-- 名字价格 -->
+                        <view class="cart-item-word">
+                            <view class="title-box">
+                                <text class="title">{{item.name}}</text>
+                                <text>￥{{item.price}}</text>
+                            </view>
+                            <!-- 数量操作 -->
+                            <view class="bottom-box">
+                                <view class="cart-item-counts">
+                                  <view class="btns "
+                                    bindtap='reduce'
+                                    data-index="{{index}}"
+                                    >-</view>
+                                    <view class="counts">{{item.num}}</view>
+                                    <view class="btns" 
+                                          bindtap='add'
+                                          data-index='{{index}}'
+                                    >+</view>
+                                </view>
+                                <view class="delete" 
+                                bindtap='del'
+                                data-index='{{index}}'
+                                >×</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <!--  底部 全选，下单，总数量，总价格 -->
+        <view class="footer-account-box all-accounts-box">
+            <!-- 全选按钮 -->
+            <view class="all-select" bindtap='selAll'>
+                <image wx:if="{{selectAll}}"
+                  class="title-icon" src="/common/icon/all@selected.png"></image>
+                <image wx:else class="title-icon" src="/common/icon/all.png"></image>
+                <text>全选({{allCount}})</text>
+            </view>
+            <!-- 下单按钮 -->
+            <view class="all-price-submit {{account==0?'disabled':''}}" bindtap="submitOrder">
+                <view class="accounts-btn">下单</view>
+                <view class="price-text">￥{{allPrice}}</view>
+                <view class="arrow-icon">
+                    <image wx:if="{{allPrice==0}}" src="/common/icon/arrow@grey.png"></image>
+                    <image wx:else src="/common/icon/arrow.png"></image>
+                </view>
+            </view>
+        </view>
+    </block>
+    <!-- 购物车为空 -->
+    <view  wx:else class="no-data">
+        您还没有添加任何商品
+    </view>
+</view>

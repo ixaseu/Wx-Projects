@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/car/car",
+    "pages/categroy/categroy",
+    "pages/my/my",
+    "pages/map/map",
+    "pages/detail/detail",
+    "pages/theme/theme",
+    "pages/order/order"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ab956d",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "零食商贩",
+    "backgroundColor": "#303128",
+    "backgroundTextStyle": "dark"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "position": "bottom",
+    "color": "#cccccc",
+    "selectedColor": "#ab956d",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "common/toolbar/home.png",
+        "selectedIconPath": "common/toolbar/home@selected.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "iconPath": "common/toolbar/category.png",
+        "selectedIconPath": "common/toolbar/category@selected.png",
+        "pagePath": "pages/categroy/categroy",
+        "text": "分类"
+      },
+      {
+        "iconPath": "common/toolbar/cart.png",
+        "selectedIconPath": "common/toolbar/cart@selected.png",
+        "pagePath": "pages/car/car",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "common/toolbar/my.png",
+        "selectedIconPath": "common/toolbar/my@selected.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

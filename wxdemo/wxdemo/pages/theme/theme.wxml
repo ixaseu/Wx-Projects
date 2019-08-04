@@ -1,0 +1,10 @@
+<!--pages/theme/theme.wxml-->
+<import src="../tpl/products/products.wxml"/>
+<view class="theme">
+  <view class="top">
+    <image src="{{baseUrl}}{{topimg}}"></image>
+  </view>
+  <view>
+    <template is="products" data="{{ ...{baseUrl,products} }}"/>
+  </view>
+</view>

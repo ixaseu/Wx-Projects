@@ -1,0 +1,14 @@
+<!--pages/tpl/products/products.wxml-->
+<text>pages/tpl/products/products.wxml</text>
+<template name="products">
+  <view class="products-tpl">
+    <block wx:for="{{products}}">
+      <view class="products-item" bindtap="goDetail"
+      data-id="{{item._id}}">
+      <image src="{{baseUrl}}{{item.imgPath}}"></image>
+      <text>{{item.name}}</text>
+      <text>￥{{item.price}}</text>
+      </view>
+    </block>
+  </view>
+</template>
